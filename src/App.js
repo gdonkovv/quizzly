@@ -117,6 +117,10 @@ function App() {
     }
   }
 
+  const onEditSubmit = async (questionId, values) => {
+
+  };
+
   const responseSubmitHandler = async (questionId, isCorrect) => {
     if (auth.accessToken) {
       const response = await userStatsService.handleResponse(auth._id, auth.username, questionId, isCorrect, auth.accessToken);
@@ -149,7 +153,7 @@ function App() {
           <Route path='/play' element={<Play responseSubmitHandler={responseSubmitHandler} />} />
           <Route path='/my-questions' element={<MyQuestions />} />
           <Route path='/my-questions/:questionId/details' element={<Details onDeleteClick={onDeleteClick} />} />
-          <Route path='/my-questions/:questionId/edit' element={<Edit />} />
+          <Route path='/my-questions/:questionId/edit' element={<Edit onEditSubmit={onEditSubmit} />} />
           <Route path='/my-questions/create' element={<Create onCreateSubmit={onCreateSubmit} />} />
           <Route path='/rankings' element={<Rankings />} />
           <Route path='/login' element={<Login />} />

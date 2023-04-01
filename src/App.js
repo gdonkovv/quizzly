@@ -17,29 +17,53 @@ import { AuthContext } from './contexts/AuthContext';
 import { useEffect, useState } from "react";
 import { authService } from "./services/authService";
 import { questionsService } from "./services/questionsService";
+import { userStatsService } from "./services/userStatsService";
 
 function App() {
 
   const navigate = useNavigate();
   const [auth, setAuth] = useState({});
-  const [userRank, setUserRank] = useState("");
+  const [rank, setRank] = useState("");
+  const [answeredQuestionsIds, setAnsweredQuestionsIds] = useState([]);
 
   useEffect(() => {
-    updateUserRank(auth._id);
+    if (auth._id) {
+      userStatsService.getAllAnsweredQuestionsIds(auth._id)
+        .then(result => {
+          setAnsweredQuestionsIds(result);
+        });
+
+      userStatsService.getUserRank(auth._id)
+        .then(result => {
+          setRank(result);
+        });
+    }
   }, [auth._id]);
 
-  function updateUserRank(userId) {
-    questionsService.getUserRank(userId)
-      .then(result => {
-        setUserRank(result);
-      });
-  };
+  function updateUserStats() {
+    if (auth._id) {
+      userStatsService.getAllAnsweredQuestionsIds(auth._id)
+        .then(result => {
+          setAnsweredQuestionsIds(result);
+        });
+
+      userStatsService.getUserRank(auth._id)
+        .then(result => {
+          setRank(result);
+        });
+    } else {
+      setRank("");
+      setAnsweredQuestionsIds([]);
+    }
+  }
 
   const onLoginSubmit = async (data) => {
     try {
       const result = await authService.login(data);
 
       setAuth(result);
+
+      console.log(result);
 
       navigate('/');
     } catch (error) {
@@ -68,11 +92,14 @@ function App() {
     await authService.logout(token);
 
     setAuth({});
+
+    setRank("");
+    setAnsweredQuestionsIds([]);
   };
 
   const onCreateSubmit = async (values) => {
     try {
-      const result = await questionsService.createQuestion({ ...values, author: auth.username }, auth.accessToken);
+      await questionsService.createQuestion({ ...values, author: auth.username }, auth.accessToken);
 
       navigate('/my-questions');
     } catch (error) {
@@ -82,7 +109,7 @@ function App() {
 
   const onDeleteClick = async (questionId) => {
     try {
-      const result = await questionsService.deleteQuestion(questionId, auth.accessToken);
+      await questionsService.deleteQuestion(questionId, auth.accessToken);
 
       navigate('/my-questions');
     } catch (error) {
@@ -90,19 +117,11 @@ function App() {
     }
   }
 
-  const responseSubmitHandler = async (values, question) => {
-    // You can respond to questions but you cannot edit other users' questions
-    // Responses should be saved in user object -> user.responses: [questionId: {correctCount, wrongCount}]
-
-    console.log(values);
-    console.log(question);
-
-    // let isCorrect = false;
-    // if (values.answer === question.correct) {
-    //   isCorrect = true;
-    // }
-    // const result = await questionsService.respondToQuestion(question, auth._id, isCorrect, auth.accessToken);
-    // console.log(result);
+  const responseSubmitHandler = async (questionId, isCorrect) => {
+    if (auth.accessToken) {
+      const response = await userStatsService.handleResponse(auth._id, auth.username, questionId, isCorrect, auth.accessToken);
+      updateUserStats();
+    }
   }
 
   const contextValues = {
@@ -115,7 +134,8 @@ function App() {
     isAuthenticated: !!auth.accessToken,
     userUsername: auth.username,
     userImageUrl: auth.imageUrl,
-    userRank: userRank
+    userRank: rank,
+    userAnsweredQuestionsIds: answeredQuestionsIds
   };
 
   return (

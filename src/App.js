@@ -18,8 +18,14 @@ import { useEffect, useState } from "react";
 import { authService } from "./services/authService";
 import { questionsService } from "./services/questionsService";
 import { userStatsService } from "./services/userStatsService";
+import { RouteGuard } from "./components/common/RouteGuard";
+import { QuestionOwner } from "./components/common/QuestionOwner";
+
 
 function App() {
+
+
+  // TO DO - add validation to forms and display errors when something is wrong
 
   const navigate = useNavigate();
   const [auth, setAuth] = useState({});
@@ -62,8 +68,6 @@ function App() {
       const result = await authService.login(data);
 
       setAuth(result);
-
-      console.log(result);
 
       navigate('/');
     } catch (error) {
@@ -109,16 +113,26 @@ function App() {
 
   const onDeleteClick = async (questionId) => {
     try {
-      await questionsService.deleteQuestion(questionId, auth.accessToken);
+      // eslint-disable-next-line no-restricted-globals
+      let response = confirm("Are you sure you want to delete this question?");
+      if (response) {
+        await questionsService.deleteQuestion(questionId, auth.accessToken);
+        navigate('/my-questions');
+      }
 
-      navigate('/my-questions');
     } catch (error) {
       console.log('There is a problem with deleting the question');
     }
   }
 
   const onEditSubmit = async (questionId, values) => {
+    try {
+      await questionsService.editQuestion(questionId, { ...values, author: auth.username }, auth.accessToken);
 
+      navigate('/my-questions');
+    } catch (error) {
+      console.log('There is a problem with editing the question');
+    }
   };
 
   const responseSubmitHandler = async (questionId, isCorrect) => {
@@ -151,14 +165,21 @@ function App() {
           <Route path='*' element={<h1>404 Not found</h1>} />
           <Route path='/' element={<Hero />} />
           <Route path='/play' element={<Play responseSubmitHandler={responseSubmitHandler} />} />
-          <Route path='/my-questions' element={<MyQuestions />} />
-          <Route path='/my-questions/:questionId/details' element={<Details onDeleteClick={onDeleteClick} />} />
-          <Route path='/my-questions/:questionId/edit' element={<Edit onEditSubmit={onEditSubmit} />} />
-          <Route path='/my-questions/create' element={<Create onCreateSubmit={onCreateSubmit} />} />
-          <Route path='/rankings' element={<Rankings />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/logout' element={<Logout />} />
+
+          <Route element={<RouteGuard />}>
+            <Route path='/my-questions' element={<MyQuestions />} />
+            <Route path='/my-questions/:questionId/edit' element={
+              <QuestionOwner>
+                <Edit onEditSubmit={onEditSubmit} />
+              </QuestionOwner>
+            } />
+            <Route path='/my-questions/:questionId/details' element={<Details onDeleteClick={onDeleteClick} />} />
+            <Route path='/my-questions/create' element={<Create onCreateSubmit={onCreateSubmit} />} />
+            <Route path='/rankings' element={<Rankings />} />
+            <Route path='/logout' element={<Logout />} />
+          </Route>
         </Routes>
 
 

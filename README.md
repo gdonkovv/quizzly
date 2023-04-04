@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React application that allows users to answer quiz questions created by other users. Users can also view more details about each question after they answer it correctly, including the question text, the available options, the correct option, the author's username and how many correct answers were received to the question and how many wrong. Also there is a ranking page where users can see the top 3 players(users with most correct answers) and the top 3 authors(users with most created questions).
 
-## Available Scripts
+# Components
 
-In the project directory, you can run:
+## App
 
-### `npm start`
+The App component is the root component of the application. It contains all the major components of the application and the routing logic.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Header
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Header component is the component that contains the name of the app, the navigation and the user info.
 
-### `npm test`
+## Footer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Footer component is the component that contains the copyright information.
 
-### `npm run build`
+## Hero
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Hero component is the first view the user sees when entering the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Play
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Play component is the view where the user can play the game and answer questions created by other users.
 
-### `npm run eject`
+## My Questions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The My Questions component is the view where the user can see all the questions that they created and all the questions by other users that they answered correctly.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Rankings
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The Rankings component is the view where the user can see top 3 users that answered correctly to the most questions and top 3 users that created the most questions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Create
 
-## Learn More
+The Create component is the view where the user can fill in a form to create a new question.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Edit
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Edit component is the view where the user can edit in a form an existing question that they created.
 
-### Code Splitting
+## Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Details component is the view where the user can see details about a question. If the user is the author of the question, they can see Edit and Delete buttons.
 
-### Analyzing the Bundle Size
+## Login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The Login component contains the login form through which the user can authenticate.
 
-### Making a Progressive Web App
+## Register
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The Register component contains the registration form through which the user can create their profile in the application.
 
-### Advanced Configuration
+## Logout
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The Logout component contains the logic that logs out the user and deletes authentication data from the current user session.
 
-### Deployment
+## ErrorBox
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Error Box component is an element that displays errors from other components in the app.
 
-### `npm run build` fails to minify
+# Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To use this application, follow these steps:
+
+Click on Play and start answering questions.
+If you are not registered, your results will not be saved.
+You can go to the Register page to create a profile.
+Then you can go to the Play page again and this time all your responses will be saved.
+You can go to the My Questions Page to create, edit or delete your own questions or to view details about questions you answered correctly.
+You can check the Rankings page to see the top 3 responders and the top 3 question authors.
+
+# Installation and Setup
+
+To install and run this project locally, follow these steps:
+
+Clone the repository to your local machine.
+Install the dependencies by running npm install.
+Start the development server by running 'npm start'.
+Clone the SoftUni Practice Server repository and run it in new terminal with 'node server.js' : https://github.com/softuni-practice-server/softuni-practice-server
+Open your web browser and navigate to http://localhost:3000.

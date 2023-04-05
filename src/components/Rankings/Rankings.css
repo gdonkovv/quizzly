@@ -1,0 +1,74 @@
+/* RANKINGS */
+
+.rankings {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.rankings .topPlayers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 45%;
+  align-items: center;
+}
+
+.rankings .topPlayers ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+  gap: 12%;
+  width: 100%;
+}
+
+.rankings .topPlayers img {
+  width: 100%;
+}
+
+.rankings .topPlayers ul li {
+  background-color: #b94d04;
+  padding: 40px;
+  color: white;
+  border-radius: 24px;
+}
+
+.rankings .topAuthors {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 45%;
+  align-items: center;
+}
+
+.rankings .topAuthors h3,
+.rankings .topPlayers h3 {
+  background-color: #b94d04;
+  color: white;
+  padding: 20px 0px;
+  width: 100%;
+  text-align: center;
+  border-radius: 24px;
+}
+
+.rankings .topAuthors ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  gap: 12%;
+  width: 100%;
+}
+
+.rankings .topAuthors img {
+  width: 100%;
+}
+
+.rankings .topAuthors ul li {
+  background-color: #b94d04;
+  padding: 40px;
+  color: white;
+  border-radius: 24px;
+}

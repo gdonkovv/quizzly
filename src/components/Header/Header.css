@@ -1,0 +1,56 @@
+/* HEADER */
+
+header {
+  background-color: #b94d04;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 18px;
+}
+
+header .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .navigation ul {
+  list-style-type: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+header .navigation ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+header .login-register {
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 6px 10px;
+  display: flex;
+  gap: 30px;
+}
+
+header .login-register a {
+  text-decoration: none;
+  color: white;
+}
+
+header .userInfo {
+  display: flex;
+  gap: 10px;
+}
+
+header .userInfo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+header .userInfo i {
+  font-size: 36px;
+}

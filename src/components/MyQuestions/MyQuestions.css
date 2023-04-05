@@ -1,0 +1,112 @@
+/* MY QUESTIONS */
+
+.myQuestions {
+  padding: 20px 40px;
+}
+
+.myQuestionsWrapper {
+  display: flex;
+  gap: 10%;
+}
+
+.myQuestionsWrapper .createdByUser {
+  width: 45%;
+}
+
+.myQuestionsWrapper .createdByUser div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.myQuestionsWrapper .createdByUser .createNewBtn {
+  /* margin-top: 10px; */
+  text-align: center;
+  background-color: #b94d04;
+  border: none;
+  padding: 4px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  height: 28px;
+  width: 200px;
+  text-decoration: none;
+}
+
+.myQuestionsWrapper .createdByUser a:hover {
+  background-color: #6a2c03;
+  font-weight: bold;
+}
+
+.myQuestionsWrapper .createdByUser ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: scroll;
+  height: 460px;
+  background-color: rgb(251, 234, 223);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 20px;
+}
+
+.myQuestionsWrapper .createdByUser ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b94d04;
+  padding: 10px 0px;
+}
+
+.myQuestionsWrapper .createdByUser ul li a {
+  color: white;
+  background-color: #b94d04;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 12px;
+  width: 20%;
+  text-align: center;
+}
+
+.myQuestionsWrapper .createdByUser ul li span {
+  width: 70%;
+}
+
+.myQuestionsWrapper .answeredByUser {
+  width: 45%;
+}
+
+.myQuestionsWrapper .answeredByUser ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: scroll;
+  height: 460px;
+  background-color: rgb(251, 234, 223);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 20px;
+}
+
+.myQuestionsWrapper .answeredByUser ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b94d04;
+  padding: 10px 0px;
+}
+
+.myQuestionsWrapper .answeredByUser ul li a {
+  color: white;
+  background-color: #b94d04;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 12px;
+  width: 20%;
+  text-align: center;
+}
+
+.myQuestionsWrapper .answeredByUser ul li span {
+  width: 70%;
+}

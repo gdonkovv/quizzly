@@ -1,0 +1,81 @@
+/* DETAILS */
+
+.details {
+  padding: 20px 40px;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(251, 234, 223);
+  padding: 10px 20px;
+}
+
+.detailsWrapper ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detailsWrapper .info p {
+  margin: 0;
+  padding: 0;
+}
+
+.detailsWrapper .info p .correct {
+  background-color: green;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.detailsWrapper .info p .wrong {
+  background-color: red;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.detailsWrapper .info p:first-child {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.detailsWrapper .ownerButtonsWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.detailsWrapper .ownerButtonsWrapper a {
+  text-align: center;
+  background-color: #b94d04;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  height: auto;
+  width: 100px;
+  text-decoration: none;
+}
+
+.detailsWrapper .ownerButtonsWrapper a:hover {
+  background-color: #6a2c03;
+  font-weight: bold;
+}
+
+.detailsWrapper .ownerButtonsWrapper button {
+  text-align: center;
+  background-color: #b94d04;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  height: auto;
+  width: 100px;
+  text-decoration: none;
+}
+
+.detailsWrapper .ownerButtonsWrapper button:hover {
+  background-color: #6a2c03;
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+/* REGISTER */
+
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+.registerWrapper {
+  background-color: #b94d04;
+  margin: 20px;
+  padding: 40px;
+  color: white;
+  border-radius: 16px;
+}
+.registerWrapper h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.registerWrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.registerWrapper form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.registerWrapper form div input {
+  height: 30px;
+}
+
+.registerWrapper form .registerBtnWrapper input {
+  text-align: center;
+  background-color: white;
+  border: none;
+  border-radius: 16px;
+  color: black;
+  cursor: pointer;
+  height: 30px;
+  font-size: 16px;
+}
+
+.registerWrapper form .registerBtnWrapper input:hover {
+  background-color: rgb(133, 132, 132);
+  font-weight: bold;
+}

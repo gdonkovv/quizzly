@@ -1,0 +1,32 @@
+/* HERO */
+
+.hero {
+  display: flex;
+  padding: 16px 80px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero .welcome h1 {
+  font-size: 48px;
+  margin: 0;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero .welcome p {
+  font-size: 24px;
+  margin: 0;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hero .welcome a {
+  background-color: #b94d04;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}

@@ -1,0 +1,46 @@
+/* EDIT */
+
+.edit {
+  padding: 20px 40px;
+}
+
+.editFormWrapper form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  gap: 16px;
+  background-color: rgb(251, 234, 223);
+}
+
+.editFormWrapper form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editFormWrapper form .editQuestionBtn {
+  width: 10%;
+}
+
+.editFormWrapper form input,
+.editFormWrapper form select {
+  height: 30px;
+  font-size: 16px;
+}
+
+.editFormWrapper form .editQuestionBtn input {
+  text-align: center;
+  background-color: #b94d04;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  height: auto;
+  width: 150px;
+}
+
+.editFormWrapper form .editQuestionBtn input:hover {
+  background-color: #6a2c03;
+  font-weight: bold;
+}

@@ -66,7 +66,8 @@ const getTop3Players = async () => {
     const top3Players = userStatsSorted.map((x, i) => {
         return {
             username: x.username,
-            rank: i + 1
+            rank: i + 1,
+            correctAnswers: x.answers.filter(x => x.correctRes > 0).length
         }
     });
 

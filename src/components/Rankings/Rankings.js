@@ -28,15 +28,18 @@ export const Rankings = () => {
                 <ul>
                     <li>
                         <span>{topPlayers[1] ? topPlayers[1].username : "-"}</span><br />
-                        <span>Rank: {topPlayers[1] ? topPlayers[1].rank : "-"}</span>
+                        <span>Rank: {topPlayers[1] ? topPlayers[1].rank : "-"}</span><br />
+                        <span>Correct: {topPlayers[1] ? topPlayers[1].correctAnswers : "-"}</span>
                     </li>
                     <li>
                         <span>{topPlayers[0] ? topPlayers[0].username : "-"}</span><br />
-                        <span>Rank: {topPlayers[0] ? topPlayers[0].rank : "-"}</span>
+                        <span>Rank: {topPlayers[0] ? topPlayers[0].rank : "-"}</span><br />
+                        <span>Correct: {topPlayers[0] ? topPlayers[0].correctAnswers : "-"}</span>
                     </li>
                     <li>
                         <span>{topPlayers[2] ? topPlayers[2].username : "-"}</span><br />
-                        <span>Rank: {topPlayers[2] ? topPlayers[2].rank : "-"}</span>
+                        <span>Rank: {topPlayers[2] ? topPlayers[2].rank : "-"}</span><br />
+                        <span>Correct: {topPlayers[2] ? topPlayers[2].correctAnswers : "-"}</span>
                     </li>
                 </ul>
                 <img src="./images/trophies-removebg.png" alt="trophies" />
@@ -46,15 +49,18 @@ export const Rankings = () => {
                 <ul>
                     <li>
                         <span>{topAuthors[1] ? topAuthors[1].username : "-"}</span><br />
-                        <span>Rank: {topAuthors[1] ? topAuthors[1].rank : "-"}</span>
+                        <span>Rank: {topAuthors[1] ? topAuthors[1].rank : "-"}</span><br />
+                        <span>Created: {topAuthors[1] ? topAuthors[1].questionsCreated : "-"}</span>
                     </li>
                     <li>
                         <span>{topAuthors[0] ? topAuthors[0].username : "-"}</span><br />
-                        <span>Rank: {topAuthors[0] ? topAuthors[0].rank : "-"}</span>
+                        <span>Rank: {topAuthors[0] ? topAuthors[0].rank : "-"}</span><br />
+                        <span>Created: {topAuthors[0] ? topAuthors[0].questionsCreated : "-"}</span>
                     </li>
                     <li>
                         <span>{topAuthors[2] ? topAuthors[2].username : "-"}</span><br />
-                        <span>Rank: {topAuthors[2] ? topAuthors[2].rank : "-"}</span>
+                        <span>Rank: {topAuthors[2] ? topAuthors[2].rank : "-"}</span><br />
+                        <span>Created: {topAuthors[2] ? topAuthors[2].questionsCreated : "-"}</span>
                     </li>
                 </ul>
                 <img src="./images/trophies-removebg.png" alt="trophies" />

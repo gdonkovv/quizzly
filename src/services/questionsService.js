@@ -146,7 +146,8 @@ const getTop3Authors = async () => {
     const finalResult = sorted.slice(0, 3).map((x, i) => {
         return {
             username: x.username,
-            rank: i + 1
+            rank: i + 1,
+            questionsCreated: result.filter(q => q._ownerId === x.id).length
         }
     });
 
